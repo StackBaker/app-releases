@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-20.04, windows-latest]
+        platform: [ubuntu-20.04] # for testing
     runs-on: ${{ matrix.platform }}
 
     steps:
@@ -47,7 +47,7 @@ jobs:
         run: pnpm install
 
       - name: Build the app
-        uses: tauri-apps/tauri-action@v0
+        uses: tauri-apps/tauri-action@0300c0cf6d20920d0812a6af9e624aadec51cacd
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           ENABLE_CODE_SIGNING: ${{ secrets.APPLE_CERTIFICATE }}
@@ -64,5 +64,5 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
-          args: '--debug'
-          includeUpdaterJson: true
+          includeDebug: true
+          includeRelease: false

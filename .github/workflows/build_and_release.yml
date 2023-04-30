@@ -64,8 +64,8 @@ jobs:
           releaseBody: 'StackBaker now has an auto-updater. A few minor bugs are also fixed in this version.'
           releaseDraft: false
           prerelease: false
-          includeDebug: true # publish only debug versions for now
-          includeRelease: false
+          includeDebug: false # testing if updater works in build
+          includeRelease: true
   
   update-website-links:
     name: "Dispatch update links workflow to website repo"

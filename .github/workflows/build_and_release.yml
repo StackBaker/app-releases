@@ -61,25 +61,25 @@ jobs:
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
-          releaseBody: 'StackBaker now has an auto-updater. A few minor bugs are also fixed in this version.'
+          releaseBody: 'Testing auto-updater in debug version'
           releaseDraft: false
           prerelease: false
-          includeDebug: false # testing if updater works in build
-          includeRelease: true
+          includeDebug: true # testing if updater works in debug
+          includeRelease: false
   
-update-website-links:
-  name: "Dispatch update links workflow to website repo"
-  needs: build-tauri
-  runs-on: ubuntu-latest
-  steps:
-    - name: Dispatch update links workflow to website repo
-      uses: actions/github-script@v6
-      with:
-        github-token: ${{ secrets.PAT_TOKEN }}
-        script: |
-          await github.rest.actions.createWorkflowDispatch({
-            owner: 'StackBaker',
-            repo: 'website',
-            workflow_id: 'update_release_links.yml',
-            ref: 'master'
-          })
+  update-website-links:
+    name: "Dispatch update links workflow to website repo"
+    needs: build-tauri
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch update links workflow to website repo
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'StackBaker',
+              repo: 'website',
+              workflow_id: 'update_release_links.yml',
+              ref: 'master'
+            })

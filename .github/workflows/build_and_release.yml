@@ -61,10 +61,10 @@ jobs:
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
-          releaseBody: 'Testing auto-updater in debug version'
+          releaseBody: "Fix StackBaker's auto-updater in the debug release"
           releaseDraft: false
           prerelease: false
-          includeDebug: true # testing if updater works in debug
+          includeDebug: true
           includeRelease: false
   
   update-website-links:

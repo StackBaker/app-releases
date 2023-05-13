@@ -61,7 +61,7 @@ jobs:
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
-          releaseBody: "Debug version for version 0.1.2: Fix the bugs of structuredClone being undefined and tasks remaining undeleted in the DB"
+          releaseBody: "Debug version for version 0.1.3: Fix the bugs of structuredClone being undefined and tasks remaining undeleted in the DB"
           releaseDraft: false
           prerelease: false
           includeDebug: true

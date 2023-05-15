@@ -61,11 +61,11 @@ jobs:
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
-          releaseBody: "Debug version for version 0.1.3: Fix the bugs of structuredClone being undefined and tasks remaining undeleted in the DB"
+          releaseBody: "Version 0.1.3: Fix the bugs of structuredClone being undefined. StackBaker's day calendar can now plan recurring events."
           releaseDraft: false
           prerelease: false
-          includeDebug: true
-          includeRelease: false
+          includeDebug: false
+          includeRelease: true
   
   update-website-links:
     name: "Dispatch update links workflow to website repo"

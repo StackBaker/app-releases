@@ -58,10 +58,23 @@ jobs:
           APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+          VITE_SERVER_ACCESS_HEADER: ${{ secrets.VITE_SERVER_ACCESS_HEADER }}
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
-          releaseBody: "Version 0.1.3: Fix the bugs of structuredClone being undefined. StackBaker's day calendar can now plan recurring events."
+          releaseBody: |
+            StackBaker v0.1.4 introduces our first change to our privacy policy.
+            In particular, we now log the amount of clicks you make through the app. This
+            is the only information of yours that we collect. Please see our privacy
+            policy for the full details: https://www.stackbaker.com/privacy-policy.
+            
+            Version 0.1.4 also adds many small features:
+            - month and day views in the dashboard
+            - auto-reload at 6am to plan for the new day
+            - setting to turn off automatically loading the planner on opening the app
+            - today is now highlighted in the datepicker
+            - completed items go to the bottom of the list; items marked incomplete return to the top
+
           releaseDraft: false
           prerelease: false
           includeDebug: false

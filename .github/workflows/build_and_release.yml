@@ -63,17 +63,12 @@ jobs:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
           releaseBody: |
-            StackBaker v0.1.4 introduces our first change to our privacy policy.
-            In particular, we now log the amount of clicks you make through the app. This
-            is the only information of yours that we collect. Please see our privacy
-            policy for the full details: https://www.stackbaker.com/privacy-policy.
-            
-            Version 0.1.4 also adds many small features:
-            - month and day views in the dashboard
-            - auto-reload at 6am to plan for the new day
-            - setting to turn off automatically loading the planner on opening the app
-            - today is now highlighted in the datepicker
-            - completed items go to the bottom of the list; items marked incomplete return to the top
+            StackBaker v0.1.5 makes the following changes:
+            - fix auto-reload at 6am
+            - ability to change the snap duration precision in the calendar
+            - new logo
+            - planner now skips to stage 4 from stage 2 if there are no later tasks
+            - fix bug of invalid settings after clearing data
 
           releaseDraft: false
           prerelease: false

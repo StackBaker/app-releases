@@ -56,6 +56,7 @@ jobs:
           APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
           VITE_SERVER_ACCESS_HEADER: ${{ secrets.VITE_SERVER_ACCESS_HEADER }}
@@ -65,12 +66,13 @@ jobs:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
           releaseBody: |
-            StackBaker v0.1.5 makes the following changes:
-            - fix auto-reload at 6am
-            - ability to change the snap duration precision in the calendar
-            - new logo
-            - planner now skips to stage 4 from stage 2 if there are no later tasks
-            - fix bug of invalid settings after clearing data
+            BREAKING CHANGE
+            StackBaker v1.0.0 redesigns the internal database for 
+            - greater efficiency 
+            - higher reliability in saving
+            - fixes bug of items randomly disappearing
+            Other changes:
+            - remove feedback link (users should use GitHub Issues instead)
 
           releaseDraft: false
           prerelease: false

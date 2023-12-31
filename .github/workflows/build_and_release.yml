@@ -93,5 +93,5 @@ jobs:
               owner: 'StackBaker',
               repo: 'website',
               workflow_id: 'update_release_links.yml',
-              ref: 'master'
+              ref: 'main'
             })

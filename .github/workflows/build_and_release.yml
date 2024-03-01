@@ -66,13 +66,12 @@ jobs:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'StackBaker Desktop v__VERSION__'
           releaseBody: |
-            BREAKING CHANGE
-            StackBaker v1.0.0 redesigns the internal database for 
-            - greater efficiency 
-            - higher reliability in saving
-            - fixes bug of items randomly disappearing
-            Other changes:
-            - remove feedback link (users should use GitHub Issues instead)
+            StackBaker v1.0.1 adds the following new small features:
+            - Quick Tmrw button to push items to tomorrow
+            - Quick 15min/30min/45/min/1 hour buttons on Event Edit Modal
+            - Close Settings and Save button in settings editor are now unified
+            - Text in Items, Later, and Input can now be multiline; use Shift+Enter to add new lines
+            - Maybe some more, I don't remember
 
           releaseDraft: false
           prerelease: false
